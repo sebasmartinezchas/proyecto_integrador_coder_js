@@ -140,6 +140,12 @@ function changeQuantity(e) {
     });
 }
 
+//jquery, aparece un mensaje en el carrito, desaparece y vuelve a aparecer.
+$(document).ready(function() {
+    $("#agradecimiento").slideUp(2000).slideDown(2000).fadeOut(1000).fadeIn(3000);
+
+});
+
 //LocalStorage
 function addLocalStorage() {
     localStorage.setItem('cart', JSON.stringify(cart));
