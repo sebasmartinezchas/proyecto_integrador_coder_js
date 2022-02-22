@@ -142,7 +142,7 @@ function changeQuantity(e) {
 
 //jquery, aparece un mensaje en la cabecera, desaparece y vuelve a aparecer.
 $(document).ready(function() {
-    $("#agradecimiento").slideUp(2000).slideDown(2000).fadeOut(1000).fadeIn(3000);
+    $("#agradecimiento").slideUp(12000).slideDown(2000).fadeOut(1000).fadeIn(3000);
 
 });
 

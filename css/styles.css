@@ -49,3 +49,35 @@ header,
 .remove {
     display: none;
 }
+
+#agradecimiento h1 {
+    color: #333;
+    font-family: monospace;
+    text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: wrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation: typing 3.5s steps(30, end), blink-caret .5s step-end infinite;
+    text-align: center;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent
+    }
+    50% {
+        border-color: orange
+    }
+}
