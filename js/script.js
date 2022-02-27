@@ -140,9 +140,32 @@ function changeQuantity(e) {
     });
 }
 
-//jquery, aparece un mensaje en la cabecera, desaparece y vuelve a aparecer.
+
+//Jquery, acá incorporamos una animación concatenada, aparece un mensaje de bienvenida en la cabecera, desaparece y vuelve a aparecer.
 $(document).ready(function() {
-    $("#agradecimiento").slideUp(4000).slideDown(2000).fadeOut(1000).fadeIn(3000);
+    $("#agradecimiento").slideUp(5000).slideDown(2000).fadeOut(1000).fadeIn(3000);
+    //Consumimos el API de las provincias
+    function selectLista(array, id) {
+        let innerSelect = '';
+        array.forEach(provincia => innerSelect += `<option value="${provincia.id}">${provincia.nombre}</option>`)
+        return `<select id="${id}">${innerSelect}</select>`;
+    };
+    const APIPROVINCIAS = "https://apis.datos.gob.ar/georef/api/provincias"
+    const provincias = [{ id: -1, nombre: "Seleccionar Provincia" }];
+
+    //Llamado al API de las provincias
+    $.get(APIPROVINCIAS, function(datos, estado) {
+        if (estado === "success") {
+            provincias.push(...datos.provincias);
+            //Agregamos el select,Escuchamos el evento change y filtramos la salida 
+            $('#province').prepend(`<div>Provincias: ${selectLista(provincias,'provinciasSelect')}</div>`);
+            $('#province').prepend("<h4 id='salidaProvincias'></h4>");
+            $('#provinciasSelect').change(function(e) {
+                const seleccionado = provincias.find(obj => obj.id == e.target.value);
+                $('#salidaProvincias').html(`SELECCIONADA ${seleccionado.nombre.toUpperCase()}`);
+            });
+        }
+    });
 
 });
 
