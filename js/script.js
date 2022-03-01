@@ -143,7 +143,7 @@ function changeQuantity(e) {
 
 //Jquery, acá incorporamos una animación concatenada, aparece un mensaje de bienvenida en la cabecera, desaparece y vuelve a aparecer.
 $(document).ready(function() {
-    $("#agradecimiento").slideUp(5000).slideDown(2000).fadeOut(1000).fadeIn(3000);
+    $("#agradecimiento").slideUp(4000).slideDown(2000).fadeOut(1000).fadeIn(3000);
     //Consumimos el API de las provincias
     function selectLista(array, id) {
         let innerSelect = '';
