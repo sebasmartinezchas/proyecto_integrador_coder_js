@@ -47,7 +47,8 @@ header,
 }
 
 .hide,
-.remove {
+.remove,
+.checkout {
     display: none;
 }
 
@@ -106,16 +107,16 @@ header,
 }
 
 .button:hover {
-    transform: translate(-6px, -6px);
+    transform: translate(-2px, -2px);
     color: #fff;
 }
 
 .button:hover::after {
-    transform: translate(6px, 6px);
+    transform: translate(2px, 2px);
 }
 
 .button:hover::before {
-    transform: translate(6px, 6px)
+    transform: translate(3px, 3px)
 }
 
 ul li .link-page {

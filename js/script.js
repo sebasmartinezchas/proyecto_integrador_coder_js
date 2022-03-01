@@ -162,12 +162,22 @@ $(document).ready(function() {
             $('#province').prepend("<h4 id='salidaProvincias'></h4>");
             $('#provinciasSelect').change(function(e) {
                 const seleccionado = provincias.find(obj => obj.id == e.target.value);
-                $('#salidaProvincias').html(`SELECCIONADA ${seleccionado.nombre.toUpperCase()}`);
+                $('#salidaProvincias').html(`${seleccionado.nombre}`);
             });
         }
     });
 
 });
+//Aca va el saludo al hacer click de finalizar la compra
+let checkout = document.getElementById("checkout");
+checkout.addEventListener("click", function() {
+    const alert = document.querySelector('.checkout');
+    setTimeout(function() {
+        alert.classList.add('checkout');
+    }, 4000);
+    alert.classList.remove('checkout')
+
+})
 
 //LocalStorage
 function addLocalStorage() {
